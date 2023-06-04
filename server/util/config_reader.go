@@ -5,7 +5,7 @@ import (
 	"io/ioutil"
 	"os"
 
-	"github.com/pouyam79i/Cloud_Computing_HW/main/HW2/step2/code/config"
+	"github.com/pouyam79i/url_shortener/main/server/config"
 	yaml "gopkg.in/yaml.v3"
 )
 

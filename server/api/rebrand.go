@@ -8,8 +8,8 @@ import (
 	"io/ioutil"
 	"net/http"
 
-	"github.com/pouyam79i/Cloud_Computing_HW/main/HW2/step2/code/config"
-	"github.com/pouyam79i/Cloud_Computing_HW/main/HW2/step2/code/util"
+	"github.com/pouyam79i/url_shortener/main/server/config"
+	"github.com/pouyam79i/url_shortener/main/server/util"
 )
 
 // build and send a request to rebrandly, then return result

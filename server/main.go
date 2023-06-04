@@ -5,7 +5,7 @@ import (
 
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
-	"github.com/pouyam79i/Cloud_Computing_HW/main/HW2/step2/code/handler"
+	"github.com/pouyam79i/url_shortener/main/server/handler"
 )
 
 // This function build and config server for us

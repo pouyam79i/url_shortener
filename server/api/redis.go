@@ -9,7 +9,7 @@ import (
 	"time"
 
 	"github.com/go-redis/redis"
-	"github.com/pouyam79i/Cloud_Computing_HW/main/HW2/step2/code/util"
+	"github.com/pouyam79i/url_shortener/main/server/util"
 )
 
 var client *redis.Client = nil

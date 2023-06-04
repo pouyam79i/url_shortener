@@ -7,9 +7,9 @@ import (
 	"os"
 
 	"github.com/labstack/echo/v4"
-	"github.com/pouyam79i/Cloud_Computing_HW/main/HW2/step2/code/api"
-	"github.com/pouyam79i/Cloud_Computing_HW/main/HW2/step2/code/config"
-	"github.com/pouyam79i/Cloud_Computing_HW/main/HW2/step2/code/util"
+	"github.com/pouyam79i/url_shortener/main/server/api"
+	"github.com/pouyam79i/url_shortener/main/server/config"
+	"github.com/pouyam79i/url_shortener/main/server/util"
 )
 
 // this is a test function
