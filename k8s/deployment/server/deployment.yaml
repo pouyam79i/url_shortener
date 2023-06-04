@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: my-server
+
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: my-server
+  template:
+    metadata:
+      labels:
+        app: my-server
+    spec:
+      containers:
+        - name: my-server
+          image: cchw2server:2.1
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8000
+              name: my-server
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
+          env:
+            - name: API_KEY
+              valueFrom:
+                configMapKeyRef:
+                  key: apikey
+                  name: url-shortener
+            - name: REDIS_TIME
+              valueFrom:
+                configMapKeyRef:
+                  key: redisTime
+                  name: url-shortener
+            - name: REBRANDLY_URL
+              valueFrom:
+                configMapKeyRef:
+                  key: rebrandlyUrl
+                  name: url-shortener
+            - name: REDIS_ADDR
+              valueFrom:
+                configMapKeyRef:
+                  key: redis
+                  name: url-shortener

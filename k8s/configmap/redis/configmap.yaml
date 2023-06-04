@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+    name: redis-config
+data:
+    redis.config: |
+        port 6379
+        daemonize yes
+
+        bind 0.0.0.0
+        protected-mode yes
+
+        save 10 1
+        auto-aof-rewrite-percentage 100
+        auto-aof-rewrite-min-size 64mb
+        aof-use-rdb-preamble yes
+        appendonly yes
+
+        dbfilename cache.rdb

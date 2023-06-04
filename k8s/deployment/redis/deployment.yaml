@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+    name: my-redis
+
+spec:
+    replicas: 1
+
+    selector:
+        matchLabels:
+            app: my-redis
+
+    template:
+        metadata:
+            labels:
+                app: my-redis
+
+        spec:
+            containers:
+                - name: my-redis
+                  image: redis/redis-stack:latest
+                  resources:
+                      requests:
+                          memory: "100Mi"
+                          cpu: "250m"
+                  ports:
+                      - containerPort: 6379
+                  volumeMounts:
+                      - name: "redis-conf"
+                        mountPath: "/redis-stack.conf"
+                        subPath: "redis-stack.conf"
+                      - name: "cahce"
+                        mountPath: "/data"
+
+            volumes:
+                - name: "redis-conf"
+                  configMap:
+                      name: redis-config
+                      items:
+                          - key: redis.config
+                            path: "redis-stack.conf"
+                - name: "cahce"
+                  persistentVolumeClaim:
+                      claimName: "redis-cache-pvc"

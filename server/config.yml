@@ -1,0 +1,4 @@
+rebrandlyUrl: "your URL"
+apikey: "your APIKey"
+redis: "127.0.0.1:8080"
+redisTime: "300"

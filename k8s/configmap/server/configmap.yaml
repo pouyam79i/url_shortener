@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: url-shortener
+data:
+  rebrandlyUrl: "your URL"
+  apikey: "your APIKEY"
+  redis: my-redis
+  redisTime: "300"
